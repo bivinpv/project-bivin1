@@ -1,0 +1,19 @@
+name: Simple CI Check
+
+on: [push] # This workflow runs on every push to any branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # The type of runner that the job will run on
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4 # This action checks out your repository code
+
+    - name: Display a message
+      run: echo "Hello, CI! Workflow triggered successfully!"
+    - name: List files to demonstrate CI context
+      run: ls -la
+
+    - name: Simulate a 'test' step
+      run: echo "Running basic checks... All good!"
